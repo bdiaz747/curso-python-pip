@@ -1,6 +1,6 @@
 # Game project
 
-´´´sh
-cd hame
-Python3 main.py
-´´´
+```sh
+cd game
+python3 main.py
+```
