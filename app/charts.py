@@ -1,4 +1,4 @@
-# python app_1/charts.py
+# python app/charts.py
 # matplotlib = 
 # https://matplotlib.org/stable/plot_types/index.html
 

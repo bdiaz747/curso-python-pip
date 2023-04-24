@@ -14,15 +14,14 @@ def run():
   percentages  = list(map(lambda x: x['World Population Percentage'],data))
   charts.generater_pie_chart(countries,percentages)
   
-  country = input('Type country ')
-  print(country)
+  country= input('Type country => ')
   result = utils.population_by_continent(data, continent)
+
   
   if len(result) > 0:
     country = result[0]
-    print(country)
     labels, values = utils.get_population(country)
-    charts.generater_bar_chart(country, labels, values)
+    charts.generater_bar_chart(country['Country/Territory'],labels, values)
   
 # conifigurando main.py para que pueda ser ejecutado desde la terminal
 if __name__ == '__main__':
