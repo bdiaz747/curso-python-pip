@@ -15,7 +15,7 @@ def run():
   charts.generater_pie_chart(countries,percentages)
   
   country= input('Type country => ')
-  result = utils.population_by_continent(data, continent)
+  result = utils.population_by_country(data, country)
 
   
   if len(result) > 0:
