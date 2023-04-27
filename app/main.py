@@ -3,18 +3,29 @@
 import utils
 import read_csv
 import charts
+import pandas as pd
 
 def run():
-  data = read_csv.read_csv('data.csv')
-  list_continents = ['Africa','Asia','Europe','North America','Oceania','South America']
-  print(list_continents)
-  continent = input('Escriba un de los continentes => ')
+  ''' 
   data = list(filter(lambda item  : item['Continent'] == continent, data)) 
   countries = list(map(lambda x: x['Country/Territory'],data))
   percentages  = list(map(lambda x: x['World Population Percentage'],data))
   charts.generater_pie_chart(countries,percentages)
-  
+  '''
+  df = pd.read_csv('data.csv')  # df = dataframe , leemos el csv con pandas
+  list_continent = df['Continent'].values # lista los continentes
+  print(list_continent)
+  continent = input('Escriba uno de los continentes => ')
+  df = df[df['Continent'] == continent] # filtra el csv por el continente digitado
+  list_countries = df['Country/Territory'].values # lista los paises del continente selecionado
+  print(list_countries)
   country= input('Type country => ')
+  
+  countries = df['Country/Territory'].values 
+  percentages = df['World Population Percentage'].values 
+  charts.generater_pie_chart(countries,percentages)
+  data = read_csv.read_csv('data.csv')
+  
   result = utils.population_by_country(data, country)
 
   
