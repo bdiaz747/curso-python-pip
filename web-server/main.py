@@ -11,7 +11,7 @@ def run():
     store.get_categories()
 
 @app.get('/contact', response_class=HTMLResponse)# la ruta por donde se puede ingresar
-def get_list(): # se crea el primer recurso
+def get_list(): # renderizando de una página
     return """
     <html>
         <head>
